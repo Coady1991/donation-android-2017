@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Donate extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class Donate extends AppCompatActivity {
     private ProgressBar progressBar;
     private NumberPicker amountPicker;
     private EditText amountText;
+    private TextView amountTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class Donate extends AppCompatActivity {
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         amountPicker = (NumberPicker)findViewById(R.id.amountPicker);
         amountText = (EditText)findViewById(R.id.amountText);
+        amountTotal = (TextView)findViewById(R.id.amountTotal);
 
         amountPicker.setMinValue(0);
         amountPicker.setMaxValue(1000);
@@ -58,5 +61,8 @@ public class Donate extends AppCompatActivity {
             progressBar.setProgress(totalDonated);
             Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
         }
+
+        String totalDonatedStr = "€" + totalDonated;
+        amountTotal.setText(totalDonatedStr);
     }
 }
