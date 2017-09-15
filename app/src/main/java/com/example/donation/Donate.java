@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class Donate extends AppCompatActivity {
 
@@ -47,8 +48,15 @@ public class Donate extends AppCompatActivity {
                 donatedAmount = Integer.parseInt(text);
             }
         }
-        totalDonated = totalDonated + donatedAmount;
-        progressBar.setProgress(totalDonated);
-        Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
+
+        if (totalDonated >= target) {
+            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
+            toast.show();
+            Log.v("Donate", "Target Exceeded: " + totalDonated);
+        } else {
+            totalDonated = totalDonated + donatedAmount;
+            progressBar.setProgress(totalDonated);
+            Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
+        }
     }
 }
