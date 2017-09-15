@@ -14,27 +14,26 @@ import android.widget.Toast;
 
 public class Donate extends AppCompatActivity {
 
-    private int totalDonated = 0;
-    private int target = 10000;
-
-    private Button donateButton;
-    private RadioGroup paymentMethod;
-    private ProgressBar progressBar;
+    private int          totalDonated = 0;
+    private int          target = 10000;
+    private Button       donateButton;
+    private RadioGroup   paymentMethod;
+    private ProgressBar  progressBar;
     private NumberPicker amountPicker;
-    private EditText amountText;
-    private TextView amountTotal;
+    private EditText     amountText;
+    private TextView     amountTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
 
-        donateButton = (Button)findViewById(R.id.donateButton);
-        paymentMethod = (RadioGroup)findViewById(R.id.paymentMethod);
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        amountPicker = (NumberPicker)findViewById(R.id.amountPicker);
-        amountText = (EditText)findViewById(R.id.amountText);
-        amountTotal = (TextView)findViewById(R.id.amountTotal);
+        donateButton  = (Button)       findViewById(R.id.donateButton);
+        paymentMethod = (RadioGroup)   findViewById(R.id.paymentMethod);
+        progressBar   = (ProgressBar)  findViewById(R.id.progressBar);
+        amountPicker  = (NumberPicker) findViewById(R.id.amountPicker);
+        amountText    = (EditText)     findViewById(R.id.amountText);
+        amountTotal   = (TextView)     findViewById(R.id.amountTotal);
 
         amountPicker.setMinValue(0);
         amountPicker.setMaxValue(1000);
