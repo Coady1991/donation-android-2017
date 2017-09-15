@@ -86,4 +86,17 @@
         android:layout_marginTop="32dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/donateSubtitle" />
+
+    <EditText
+        android:id="@+id/amountText"
+        android:layout_width="125dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/amountText"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        tools:layout_editor_absoluteY="338dp" />
 </android.support.constraint.ConstraintLayout>
