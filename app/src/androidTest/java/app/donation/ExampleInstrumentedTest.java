@@ -1,4 +1,4 @@
-package com.example.donation;
+package app.donation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
