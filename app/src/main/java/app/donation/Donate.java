@@ -3,6 +3,9 @@ package app.donation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +45,14 @@ public class Donate extends AppCompatActivity {
         progressBar.setMax(target);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_donate, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
     public void donateButtonPressed(View view) {
         String method = paymentMethod.getCheckedRadioButtonId() == R.id.payPal ? "PayPal" : "Direct";
 
@@ -65,5 +76,20 @@ public class Donate extends AppCompatActivity {
 
         String totalDonatedStr = "€" + totalDonated;
         amountTotal.setText(totalDonatedStr);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menuReport:
+                Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menuSettings:
+                Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 }

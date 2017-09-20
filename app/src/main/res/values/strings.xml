@@ -7,4 +7,6 @@
     <string name="Direct">Direct</string>
     <string name="amountText">Amount</string>
     <string name="amountTotalLabel">Total so far</string>
+    <string name="menuSettings">Settings</string>
+    <string name="menuReport">Report</string>
 </resources>
