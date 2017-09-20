@@ -28,12 +28,14 @@ public class Donate extends AppCompatActivity {
     private NumberPicker amountPicker;
     private EditText     amountText;
     private TextView     amountTotal;
+    private DonationApp  app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
 
+        app           = (DonationApp)  getApplication();
         donateButton  = (Button)       findViewById(R.id.donateButton);
         paymentMethod = (RadioGroup)   findViewById(R.id.paymentMethod);
         progressBar   = (ProgressBar)  findViewById(R.id.progressBar);
@@ -56,27 +58,20 @@ public class Donate extends AppCompatActivity {
 
     public void donateButtonPressed(View view) {
         String method = paymentMethod.getCheckedRadioButtonId() == R.id.payPal ? "PayPal" : "Direct";
-
-        int donatedAmount = amountPicker.getValue();
-        if (donatedAmount == 0) {
+        int donatedAmount =  amountPicker.getValue();
+        if (donatedAmount == 0)
+        {
             String text = amountText.getText().toString();
-            if (!text.equals("")) {
+            if (!text.equals(""))
                 donatedAmount = Integer.parseInt(text);
-            }
         }
-
-        if (totalDonated >= target) {
-            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
-            toast.show();
-            Log.v("Donate", "Target Exceeded: " + totalDonated);
-        } else {
-            totalDonated = totalDonated + donatedAmount;
-            progressBar.setProgress(totalDonated);
-            Log.v("Donate", donatedAmount + " donated by " + method + "\nCurrent total " + totalDonated);
+        if (donatedAmount > 0)
+        {
+            app.newDonation(new Donation(donatedAmount, method));
+            progressBar.setProgress(app.totalDonated);
+            String totalDonatedStr = "€" + app.totalDonated;
+            amountTotal.setText(totalDonatedStr);
         }
-
-        String totalDonatedStr = "€" + totalDonated;
-        amountTotal.setText(totalDonatedStr);
     }
 
     @Override
