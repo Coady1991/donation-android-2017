@@ -72,6 +72,8 @@ public class Donate extends AppCompatActivity {
             String totalDonatedStr = "€" + app.totalDonated;
             amountTotal.setText(totalDonatedStr);
         }
+        amountPicker.setValue(0);
+        amountText.getText().clear();
     }
 
     @Override
