@@ -17,7 +17,7 @@ public class Welcome extends AppCompatActivity
     }
 
     public void loginPressed (View view) {
-        startActivity (new Intent(this, Donate.class));
+        startActivity (new Intent(this, Login.class));
     }
 
     public void signupPressed(View view) {
