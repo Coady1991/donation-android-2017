@@ -13,16 +13,12 @@ public class DonationApp extends Application
     public int             totalDonated = 0;
     public List <Donation> donations    = new ArrayList<Donation>();
 
-    public boolean newDonation(Donation donation)
-    {
+    public boolean newDonation(Donation donation) {
         boolean targetAchieved = totalDonated >= target;
-        if (!targetAchieved)
-        {
+        if (!targetAchieved) {
             donations.add(donation);
             totalDonated += donation.amount;
-        }
-        else
-        {
+        } else {
             Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -30,8 +26,7 @@ public class DonationApp extends Application
     }
 
     @Override
-    public void onCreate()
-    {
+    public void onCreate() {
         super.onCreate();
         Log.v("Donate", "Donation App Started");
     }

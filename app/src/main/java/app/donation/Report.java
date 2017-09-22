@@ -41,8 +41,7 @@ public class Report extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.menuDonate: startActivity(new Intent(this, Donate.class));
                 break;
             case R.id.menuSettings:  Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
@@ -52,21 +51,18 @@ public class Report extends AppCompatActivity {
     }
 }
 
-class DonationAdapter extends ArrayAdapter<Donation>
-{
+class DonationAdapter extends ArrayAdapter<Donation> {
     private Context context;
     public List<Donation> donations;
 
-    public DonationAdapter(Context context, List<Donation> donations)
-    {
+    public DonationAdapter(Context context, List<Donation> donations) {
         super(context, R.layout.row_layout, donations);
         this.context   = context;
         this.donations = donations;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view           =  inflater.inflate(R.layout.row_layout, parent, false);
@@ -81,8 +77,7 @@ class DonationAdapter extends ArrayAdapter<Donation>
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return donations.size();
     }
 }
