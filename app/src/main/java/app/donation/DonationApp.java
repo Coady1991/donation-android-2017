@@ -12,6 +12,7 @@ public class DonationApp extends Application
     public final int       target       = 10000;
     public int             totalDonated = 0;
     public List <Donation> donations    = new ArrayList<Donation>();
+    public List <User>     users        = new ArrayList<User>();
 
     public boolean newDonation(Donation donation) {
         boolean targetAchieved = totalDonated >= target;
@@ -23,6 +24,10 @@ public class DonationApp extends Application
             toast.show();
         }
         return targetAchieved;
+    }
+
+    public void newUser(User user) {
+        users.add(user);
     }
 
     @Override
