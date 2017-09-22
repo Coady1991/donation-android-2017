@@ -46,6 +46,8 @@ public class Report extends AppCompatActivity {
                 break;
             case R.id.menuSettings:  Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.menuLogout:   startActivity(new Intent(this, Welcome.class));
+                break;
         }
         return true;
     }
