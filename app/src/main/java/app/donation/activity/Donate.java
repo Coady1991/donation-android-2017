@@ -1,9 +1,8 @@
-package app.donation;
+package app.donation.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,6 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import app.donation.model.Donation;
+import app.donation.main.DonationApp;
 import app.donation.R;
 
 public class Donate extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class Donate extends AppCompatActivity {
     private NumberPicker amountPicker;
     private EditText     amountText;
     private TextView     amountTotal;
-    private DonationApp  app;
+    private DonationApp app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

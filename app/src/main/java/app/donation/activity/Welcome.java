@@ -1,12 +1,13 @@
-package app.donation;
+package app.donation.activity;
 
 import app.donation.R;
+import app.donation.activity.Login;
+import app.donation.activity.Signup;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 public class Welcome extends AppCompatActivity
 {
